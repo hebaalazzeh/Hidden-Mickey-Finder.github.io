@@ -48,7 +48,7 @@ This project was created as part of the Snap Engineering Academy Stage 2 assessm
 3. Explore the catalog and enjoy the hunt for Hidden Mickeys!
 
 Or, visit the **live GitHub Pages version** here:  
-👉 [https://alazzehheba.github.io/hidden-mickeys-catalog/](https://alazzehheba.github.io/hidden-mickeys-catalog/) 
+👉 [https://hebaalazzeh.github.io/Hidden-Mickey-Finder.github.io/](https://hebaalazzeh.github.io/Hidden-Mickey-Finder.github.io/) 
 
 ---
 
