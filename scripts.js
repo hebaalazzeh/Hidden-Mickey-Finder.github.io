@@ -1,6 +1,5 @@
 /**
  * Hidden Mickey Catalog - SEA Stage 2 Project
- * 
  */
 
 // Image URLs for Hidden Mickeys 
