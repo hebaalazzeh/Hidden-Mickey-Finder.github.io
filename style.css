@@ -1,0 +1,856 @@
+/* Note to self Disney Theme Colors:
+   Primary: #4D97FF (Blue - Mickey's Shorts)
+   Secondary: #F5821F (Orange - Goofy)
+   Accent 1: #F0F (Pink - Minnie)
+   Accent 2: #FFD500 (Yellow - Mickey's Buttons)
+   Accent 3: #00A566 (Green - Donald's Bowtie) 
+   Background: #FFF5E1 (Light Cream - Soft Background)
+   Dark Text: #2C3E50 (Navy Blue)
+*/
+
+html,
+body {
+    height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FFF5E1;
+    color: #2C3E50;
+}
+
+/* Header styles */
+.main-header {
+    background-color: #4D97FF;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(77, 151, 255, 0.3);
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.main-header::before {
+    content: '';
+    position: absolute;
+    background-size: 50px 50px;
+    z-index: 0;
+    animation: moveBackground 60s linear infinite;
+}
+
+
+
+.header-content {
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    text-align: center;
+    margin: 0;
+    padding-top: 30px;
+    font-size: 6em;
+    font-family: 'Bubblegum Sans', cursive;
+    color: white;
+    text-shadow:
+        2px 2px 0 #2C3E50,
+        -2px 2px 0 #2C3E50,
+        2px -2px 0 #2C3E50,
+        -2px -2px 0 #2C3E50,
+        0 3px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.tagline {
+    text-align: center;
+    color: #FFD500;
+    margin: 10px 0 0;
+    font-size: 2rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Controls for sorting/filtering/searching */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 15px;
+    border: 3px solid #F5821F;
+}
+
+.controls-container {
+    padding: 0 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.control-item {
+    flex: 1;
+    min-width: 200px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #4D97FF;
+    font-size: 1rem;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #d4e0f7;
+    background-color: white;
+    color: #2C3E50;
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+select:focus,
+input:focus {
+    border-color: #4D97FF;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(77, 151, 255, 0.2);
+}
+
+/* Found/Not Found filter buttons */
+.found-filter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 20px;
+    max-width: 500px;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    background-color: #fafafa;
+    border: 3px solid #4D97FF;
+    color: #4D97FF;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.filter-button.active,
+.filter-button:hover {
+    background-color: #4D97FF;
+    color: white;
+    box-shadow: 0 5px 10px rgba(77, 151, 255, 0.3);
+}
+
+/* Stats display */
+.stats {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 30px;
+    max-width: 1200px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    min-width: 120px;
+    border: 3px solid #FFD500;
+    transition: transform 0.3s ease;
+}
+
+
+.stat-item span {
+    display: block;
+}
+
+.stat-item span:first-child {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #F5821F;
+    font-family: 'Bubblegum Sans', cursive;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #2C3E50;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* Card container and cards */
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.card {
+    width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid #4D97FF;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card.found {
+    border: 3px solid #00A566;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h2 {
+    margin-top: 0;
+    color: #F5821F;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-family: 'Bubblegum Sans', cursive;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 3px solid #4D97FF;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.card li {
+    margin-bottom: 10px;
+    color: #2C3E50;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 25px;
+}
+
+.card li::before {
+    color: #FFD500;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 5px;
+    top: -5px;
+}
+
+/* Card buttons */
+.card-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.hint-button {
+    background-color: #FFD500;
+    color: #2C3E50;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 0 #F5821F;
+}
+
+.hint-button:hover {
+    background-color: #FFE566;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 0 #F5821F;
+}
+
+.hint-button:active {
+    transform: translateY(0);
+    box-shadow: 0 0 0 #F5821F;
+}
+
+.card-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.found-button {
+    background-color: #4D97FF;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 0 #3A72C0;
+}
+
+.found-button:hover {
+    background-color: #3A72C0;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 0 #2C559A;
+}
+
+.found-button:active {
+    transform: translateY(0);
+    box-shadow: 0 0 0 #2C559A;
+}
+
+.card.found .found-button {
+    background-color: #00A566;
+    box-shadow: 0 3px 0 #007C4D;
+}
+
+.card.found .found-button:hover {
+    background-color: #007C4D;
+    box-shadow: 0 6px 0 #005A37;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: center;
+   
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #4D97FF;
+    background-size: 50px 50px;
+}
+
+.quote-button {
+    background-color: #FFD500;
+    color: #2C3E50;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 0 #F5821F;
+    font-family: 'Bubblegum Sans', cursive;
+}
+
+.quote-button:hover {
+    background-color: #FFE566;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 0 #F5821F;
+}
+
+.quote-button:active {
+    transform: translateY(0);
+    box-shadow: 0 0 0 #F5821F;
+}
+
+/* Modal Styles */
+.hint-modal,
+.quote-modal,
+.celebration-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: modalPop 0.5s forwards;
+    border: 4px solid #4D97FF;
+}
+
+@keyframes modalPop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    90% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    background-color: #4D97FF;
+    color: white;
+    padding: 15px 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 1.5rem;
+}
+
+.close-modal {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    transform: scale(1.2) rotate(90deg);
+}
+
+.modal-body {
+    padding: 20px;
+    color: #2C3E50;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Quote Modal Styles */
+.quote-content {
+    background-color: white;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border: 4px solid #4D97FF;
+    transform: scale(0.5);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2;
+}
+
+.quote-content.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.quote-text {
+    font-size: 1.5rem;
+    color: #2C3E50;
+    margin: 30px 0;
+    line-height: 1.5;
+    font-family: 'Bubblegum Sans', cursive;
+    position: relative;
+    z-index: 2;
+}
+
+
+.close-quote {
+    background-color: #FFD500;
+    color: #2C3E50;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 0 #F5821F;
+    font-family: 'Bubblegum Sans', cursive;
+}
+
+.close-quote:hover {
+    background-color: #FFE566;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 0 #F5821F;
+}
+
+.close-quote:active {
+    transform: translateY(0);
+    box-shadow: 0 0 0 #F5821F;
+}
+
+/* Celebration Modal Styles */
+.celebration-modal {
+    z-index: 2000;
+}
+
+.celebration-message {
+    background-color: white;
+    width: 90%;
+    max-width: 400px;
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border: 4px solid #00A566;
+    animation: bounce 0.6s forwards;
+    z-index: 2;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.1);
+    }
+
+    90% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.celebration-message h3 {
+    font-family: 'Bubblegum Sans', cursive;
+    color: #00A566;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.celebration-message p {
+    font-size: 1.2rem;
+    color: #2C3E50;
+    margin-bottom: 20px;
+}
+
+.close-celebration {
+    background-color: #00A566;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 0 #007C4D;
+    font-family: 'Bubblegum Sans', cursive;
+}
+
+.close-celebration:hover {
+    background-color: #007C4D;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 0 #005A37;
+}
+
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle, #FFD500 8px, transparent 8px),
+        radial-gradient(circle, #4D97FF 15px, transparent 15px),
+        radial-gradient(circle, #F5821F 5px, transparent 5px),
+        radial-gradient(circle, #00A566 10px, transparent 10px),
+        radial-gradient(circle, #FF00FF 12px, transparent 12px);
+    background-size:
+        5% 5%,
+        10% 10%,
+        7% 7%,
+        8% 8%,
+        6% 6%;
+    animation: confettiFall 10s linear infinite;
+}
+
+@keyframes confettiFall {
+    0% {
+        background-position: 0% -100%, 20% -100%, 40% -100%, 60% -100%, 80% -100%;
+    }
+
+    100% {
+        background-position: 0% 200%, 20% 200%, 40% 200%, 60% 200%, 80% 200%;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .title {
+        font-size: 3em;
+    }
+
+    .stats {
+        padding: 0 20px;
+    }
+
+    .card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5em;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .stat-item {
+        flex: 1 0 40%;
+    }
+
+    #card-container {
+        padding: 0 10px;
+    }
+
+    .quote-content {
+        width: 90%;
+        padding: 20px 15px;
+    }
+
+    .mickey-ear {
+        width: 60px;
+        height: 60px;
+    }
+
+    .left-ear {
+        left: 40px;
+    }
+
+    .right-ear {
+        right: 40px;
+    }
+
+    .quote-text {
+        font-size: 1.2rem;
+        margin: 20px 0;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2em;
+        padding-top: 20px;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .filter-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .stat-item {
+        flex: 1 0 100%;
+        margin-bottom: 10px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .mickey-ear {
+        width: 50px;
+        height: 50px;
+    }
+
+    .left-ear {
+        left: 30px;
+    }
+
+    .right-ear {
+        right: 30px;
+    }
+}
+
+/* Custom Disney cursor */
+body {
+    cursor: default;
+}
+
+/* Card hover glow effect */
+.card:hover {
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.15),
+        0 0 20px rgba(77, 151, 255, 0.5),
+        0 0 40px rgba(77, 151, 255, 0.2);
+}
+
+.card.found:hover {
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.15),
+        0 0 20px rgba(0, 165, 102, 0.5),
+        0 0 40px rgba(0, 165, 102, 0.2);
+}
+
+/* Loading animation */
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(77, 151, 255, 0.2);
+    border-radius: 50%;
+    border-top-color: #4D97FF;
+    animation: loading 1s ease-in-out infinite;
+    margin: 50px auto;
+}
+
+/* Interactive elements focus styles */
+button:focus,
+select:focus,
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 213, 0, 0.5);
+}
+
+/* Card flip animation when marking as found */
+@keyframes cardFlip {
+    0% {
+        transform: rotateY(0);
+    }
+
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+.card-flip {
+    animation: cardFlip 0.5s forwards;
+}
+
+
+/* Ensure controls have proper responsive behavior */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 15px;
+    border: 3px solid #F5821F;
+}
+
+.control-item {
+    flex: 1;
+    min-width: 200px;
+    max-width: 100%;
+}
+
+/* Improve input field responsiveness */
+input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    border: 2px solid #d4e0f7;
+    background-color: white;
+    color: #2C3E50;
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+/* Enhanced media queries for better responsiveness */
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .control-item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Ensure search input takes full width */
+    .control-item input[type="text"] {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .controls {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    input[type="text"],
+    select {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

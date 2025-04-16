@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hidden Mickey Finder | SEA Stage 2 - Data Catalog Project</title>
+    <meta name="description" content="Find Hidden Mickeys in Disney Parks and Movies" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐭</text></svg>">
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div class="header-content">
+        <h1 class="title">Hidden Mickey Finder</h1>
+        <p class="tagline">Discover the magic hidden in plain sight</p>
+      </div>
+    </header>
+    
+    <!-- Controls section for sorting, filtering, searching -->
+    <div class="controls-container">
+    <div class="controls">
+        <div class="control-item">
+        <label for="sort">Sort by:</label>
+        <select id="sort">
+            <option value="name">Name (A-Z)</option>
+            <option value="difficulty">Difficulty (Hardest First)</option>
+            <option value="year">Year Discovered (Oldest First)</option>
+        </select>
+        </div>
+        
+        <div class="control-item">
+        <label for="filter">Filter by park:</label>
+        <select id="filter">
+            <option value="all">All Parks & Movies</option>
+            <option value="Magic Kingdom">Magic Kingdom</option>
+            <option value="EPCOT">EPCOT</option>
+            <option value="Hollywood Studios">Hollywood Studios</option>
+            <option value="Animal Kingdom">Animal Kingdom</option>
+            <option value="Movies">Disney Movies</option>
+        </select>
+        </div>
+        
+        <div class="control-item">
+        <label for="search">Search:</label>
+        <input type="text" id="search" placeholder="Type to find Mickeys...">
+        </div>
+    </div>
+    </div>
+    
+    <!-- Found/Not Found Filter Buttons -->
+    <div class="found-filter">
+      <button id="show-all" class="filter-button active">Show All</button>
+      <button id="show-found" class="filter-button">Show Found</button>
+      <button id="show-not-found" class="filter-button">Show Not Found</button>
+    </div>
+    
+    <!-- Stats display -->
+    <div class="stats">
+      <div class="stat-item">
+        <span id="total-count">0</span>
+        <span class="stat-label">Total Mickeys</span>
+      </div>
+      <div class="stat-item">
+        <span id="park-count">0</span>
+        <span class="stat-label">Parks</span>
+      </div>
+      <div class="stat-item">
+        <span id="difficulty-avg">0</span>
+        <span class="stat-label">Avg Difficulty</span>
+      </div>
+      <div class="stat-item">
+        <span id="found-count">0</span>
+        <span class="stat-label">Found</span>
+      </div>
+    </div>
+    
+    <div id="card-container"></div>
+    
+    <!-- Template card that stays hidden -->
+    <div class="card" style="display: none">
+      <div class="card-content">
+        <h2>Mickey Name</h2>
+        <img src="" alt="Hidden Mickey" />
+        <ul>
+          <li>Location</li>
+          <li>Park</li>
+          <li>Difficulty</li>
+        </ul>
+        <div class="card-buttons">
+          <button class="hint-button">View Hint</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <button onclick="quoteAlert();" class="quote-button">Get a Disney Quote!</button>
+     <ul>
+      <p class="footer-text"><b>Made with ❤️ by Heba Alazzeh</p>
+    </ul>
+    </div>
+    
+    <script type="text/javascript" src="scripts.js"></script>
+  </body>
+</html>
