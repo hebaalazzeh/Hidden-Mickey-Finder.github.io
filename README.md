@@ -69,6 +69,7 @@ Each object includes:
   hint: "...",
   imageURL: "..."
 }
+```
 
 ##💌 A Note from Heba
 This project combines my passion for thoughtful design, storytelling, and immersive interactivity. I had so much fun building this and hope it brings a bit of Disney wonder to your day.
