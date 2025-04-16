@@ -71,7 +71,7 @@ Each object includes:
 }
 ```
 
-##💌 A Note from Heba
+## 💌 A Note from Heba
 This project combines my passion for thoughtful design, storytelling, and immersive interactivity. I had so much fun building this and hope it brings a bit of Disney wonder to your day.
 
 Thanks for visiting — and remember, “It all started with a mouse.” 🐭
