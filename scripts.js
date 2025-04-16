@@ -1,8 +1,6 @@
 /**
  * Hidden Mickey Catalog - SEA Stage 2 Project
  * 
- * Enhanced version with more Hidden Mickeys, responsive design,
- * and improved functionality.
  */
 
 // Image URLs for Hidden Mickeys 
