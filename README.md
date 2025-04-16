@@ -31,16 +31,6 @@ This project was created as part of the Snap Engineering Academy Stage 2 assessm
 
 ---
 
-## 📁 File Structure
-├── index.html # Main page 
-├── style.css # Styling and animations 
-├── scripts.js # JavaScript logic and data 
-├── images 
-├── LICENSE # MIT License 
-├── README.md # This file
-
----
-
 ## 🚀 How to Run
 
 1. Clone or download this repository.
