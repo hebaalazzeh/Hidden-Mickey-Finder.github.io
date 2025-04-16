@@ -5,6 +5,8 @@ Welcome to the **Hidden Mickey Catalog**, a magical interactive site where users
 
 This project was created as part of the Snap Engineering Academy Stage 2 assessment and built using vanilla HTML, CSS, and JavaScript.
 
+![hidden_mickey_finder](https://github.com/user-attachments/assets/73e66156-f081-4d6a-8e0c-6b8aebe9c7d4)
+
 ---
 
 ## 🧠 Project Features
