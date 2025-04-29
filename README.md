@@ -16,7 +16,6 @@ This project was created as part of the Snap Engineering Academy Stage 2 assessm
 - 🎛 **Filtering**: Filter Mickeys by Disney park (e.g., Disneyland, Epcot).
 - 🔢 **Sorting**: Sort by difficulty, year discovered, or user rating.
 - ✅ **“Mark as Found”**: Users can mark Mickeys they’ve spotted.
-- ⭐ **Rating System**: Leave a 1–5 star rating on each Mickey.
 - 📊 **Stats Panel**: Real-time statistics show total found, average difficulty, and more.
 - 💬 **Inspirational Quotes**: Launch a Disney-inspired quote modal at any time.
 - 🎉 **Celebration Modal**: A surprise popup with confetti when all Mickeys are found!
